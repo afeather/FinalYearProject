@@ -214,7 +214,7 @@ public class SHA3 extends SHA {
 		//bytes[] = 0xAA 0xBB 0x00 0x00 0x00 0x00 0x00 0x00
 		//0xAA -> bitmask 0xFF -> 0xAA -> to long -> 0x00000000000000AA -> shift 0 -> 0x00000000000000AA
 		//0xBB -> bitmask 0xFF -> 0xBB -> to long -> 0x00000000000000BB -> shift 8 -> 0x000000000000BB00
-		//																		   -> 0x000000000000BBAA
+		//                                                                         -> 0x000000000000BBAA
 		return    (long) (bytes[index    ] & 0xFF)
 				| (long) (bytes[index + 1] & 0xFF) << 8
 				| (long) (bytes[index + 2] & 0xFF) << 16
