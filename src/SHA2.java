@@ -1,12 +1,26 @@
-
 public class SHA2 extends SHA {
 	
 	public static void main(String[] args) { 
 		
 		SHA2 sha2 = new SHA2();
 		
-		if (args.length == 1) sha2.update(args[0].getBytes());
-		else if (args.length == 2 && args[0] == "-f") sha2.update(args[1]);
+		if (args.length == 2 && args[0] == "-f") sha2.update(args[1]);
+		
+		else {
+		
+			String str = "";
+			
+			if (args.length > 1) {
+				
+				str = args[0];
+			
+				for (int i = 1; i < args.length; i++)
+					str += " " + args[i];
+			}
+					
+			sha2.update(str.getBytes());
+		
+		}
 		
 		System.out.println(sha2.printHash());
 	}
